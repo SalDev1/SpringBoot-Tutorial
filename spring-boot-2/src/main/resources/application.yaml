@@ -1,0 +1,61 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/salspringapp
+    password: Salman1108@
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: "true"
+welcome:
+  message: "Welcome to Salman Projects. "
+---
+spring:
+  profiles:
+    active: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/salspringap-prod
+    password: Salman1108@
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: "true"
+welcome:
+  message: "Welcome to Salman Projects. "
+---
+spring:
+  profiles:
+    active: qa
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/salspringapp-qa
+    password: Salman1108@
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: "true"
+welcome:
+  message: "Welcome to Salman Projects. "
+# Below code helps us to expose all the endpoints.
+management:
+  endpoints:
+    web:
+      exposure:
+#        Including endpoints
+        include: "*"
+#        Excluding endpoints.
+        exclude: "env,beans"
+---
+# We are telling spring boot to run this default active file down
+spring:
+  profiles:
+    default: qa;
+server:
+  port: "8082"
+# We are creating multiple profiles over here.

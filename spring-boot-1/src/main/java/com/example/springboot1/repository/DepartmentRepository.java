@@ -1,0 +1,15 @@
+package com.example.springboot1.repository;
+
+import com.example.springboot1.entity.Department;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+
+// We will be extending the JPA repository with this , because
+// it helps to make use of methods define within the class.
+@Repository
+public interface DepartmentRepository extends JpaRepository<Department, Long> {
+    public Department findByDepartmentName(String departmentName);
+
+    public Department findByDepartmentNameIgnoreCase(String departmentName);
+}

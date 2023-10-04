@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+    <!-- bean definitions here -->
+    <!--    You must define your classes and objects into this xml file-->
+    <!--    Imagine putting everything into a Beans Container and fetching
+          out according to our needs using ApplicationContext (XML Configuration )
+
+          Every Bean is assigned with a unique id , and make sure you assigned a proper path
+          to the bean in the class tag.
+          -->
+
+    <!--    Injecting Using XML Configuration-->
+    <!--     <bean id = "doctor" class = "org.example.Doctor">-->
+    <!--&lt;!&ndash;         Injecting an property&ndash;&gt;-->
+    <!--        <property name="qualification" value = "MBBS"></property>-->
+    <!--&lt;!&ndash;         Injecting an entire object to a certain class , in this case doctor&ndash;&gt;-->
+    <!--&lt;!&ndash;         <property name="nurse" ref = "nurse"></property>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;         Injecting a value using constructor injection&ndash;&gt;-->
+    <!--         <constructor-arg value = "MBBS"></constructor-arg>-->
+    <!--     </bean>-->
+    <!--    <bean id = "nurse" class = "org.example.Nurse"></bean>-->
+
+    <!--    Injecting using Annotation Configuration-->
+    <!--    This syntax tries to find a component that exists within in the folder and
+    make them as spring beans-->
+
+    <context:component-scan base-package = "org.example"/>
+</beans>
